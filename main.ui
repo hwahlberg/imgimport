@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1572</width>
+    <height>807</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="execute_pushButton">
+    <property name="geometry">
+     <rect>
+      <x>970</x>
+      <y>640</y>
+      <width>83</width>
+      <height>39</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Kör!</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="source_pushButton">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>20</y>
+      <width>91</width>
+      <height>38</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>SourceDir:</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>90</y>
+      <width>1461</width>
+      <height>511</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QTreeWidget" name="treeWidget">
+       <property name="columnCount">
+        <number>9</number>
+       </property>
+       <column>
+        <property name="text">
+         <string notr="true">1</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string notr="true">2</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string notr="true">3</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string notr="true">4</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>5</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>6</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>7</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>8</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>9</string>
+        </property>
+       </column>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="sourcedir_label">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>30</y>
+      <width>441</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>xx</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="destdir_pushButton">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>640</y>
+      <width>91</width>
+      <height>38</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>DestDir:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="dest_label">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>650</y>
+      <width>441</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>xx</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="clear_pushButton">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>630</y>
+      <width>83</width>
+      <height>39</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Clear!</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="togglenolens_checkBox">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>60</y>
+      <width>151</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>LensModel = ----</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="toggleall_checkBox">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>60</y>
+      <width>51</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Alla</string>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar">
+    <property name="geometry">
+     <rect>
+      <x>1130</x>
+      <y>40</y>
+      <width>201</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1572</width>
+     <height>35</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuArkiv">
+    <property name="title">
+     <string>Ar&amp;kiv</string>
+    </property>
+    <addaction name="actionImportera"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuit"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>&amp;Ändra</string>
+    </property>
+    <addaction name="actionDateTime"/>
+    <addaction name="actionLenseAparture"/>
+    <addaction name="actionGPS"/>
+   </widget>
+   <addaction name="menuArkiv"/>
+   <addaction name="menuEdit"/>
+  </widget>
+  <action name="actionQuit">
+   <property name="text">
+    <string>&amp;Avsluta</string>
+   </property>
+  </action>
+  <action name="actionImportera">
+   <property name="text">
+    <string>&amp;Importera ...</string>
+   </property>
+  </action>
+  <action name="actionDateTime">
+   <property name="text">
+    <string>&amp;Datum, tid</string>
+   </property>
+  </action>
+  <action name="actionLenseAparture">
+   <property name="text">
+    <string>&amp;Lins, bländare</string>
+   </property>
+  </action>
+  <action name="actionGPS">
+   <property name="text">
+    <string>&amp;GPS</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
