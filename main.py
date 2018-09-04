@@ -23,7 +23,10 @@ from logger import log
 from importwindow import ImportWindow
 from datetimewindow import DateTimeWindow
 from lenseaparturewindow import LenseApartureWindow
-from gpswindow import GPSWindow
+
+# Can't run web-modules on Windows yet!
+if sys.platform != 'win32':
+    from gpswindow import GPSWindow
 
 
 SourceDir       =   None
@@ -283,6 +286,11 @@ class ImageWindow(QMainWindow):
         global item_list
         
         log.info("====== actionGPS ======")
+
+        if sys.platform == 'win32':
+            log.info("Can not run web-modules on Windows yet!")
+            return
+        
         self.iw=GPSWindow()
         self.iw.exec_()
         res = self.iw.result()
