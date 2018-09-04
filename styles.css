@@ -1,0 +1,125 @@
+QMainWindow {
+        background: #000058;
+        color: yellow;
+}
+
+QDialog {
+        background: #000058;
+        color: yellow;
+}
+
+QTreeView {
+    alternate-background-color: green;
+    background: #2f2f2f;
+    color: yellow;
+}
+
+QHeaderView {
+    background-color: grey;
+    color: black;
+}
+
+/*
+QMenuBar {
+    background-color: grey; 
+    border: 1px solid black;
+}
+*/
+
+QMenuBar {
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,stop:0 lightgray, stop:1 #4f4f4f);
+}
+
+QMenu {
+    background-color: lightgray; 
+    border: 1px solid black;
+
+}
+
+/*
+QMenuBar::item:selected { 
+    background: orange;
+}
+
+QMenuBar::item:pressed {
+    background: red;
+
+
+QMenu::item {
+    padding: 2px 25px 2px 20px;
+    border: 1px solid transparent; 
+    color: blue;
+    background-color: transparent;
+
+*/
+
+QMenu::item {
+    padding: 2px 25px 2px 20px;
+    background: transparent;
+    color: black;
+    border: 1px solid transparent; 
+    border-radius: 5px;
+
+}
+
+
+QMenu::item:selected {
+    padding: 2px 25px 2px 20px;
+    background: transparent;
+    color:blue;
+    border: 1px solid transparent; 
+    border-radius: 5px;
+}
+
+
+
+
+
+QLabel {
+        color: yellow;
+}
+
+
+/*
+ QLabel#latitude_label {
+        color: red;
+}
+
+QRadioButton {
+    color: yellow;
+}
+
+*/
+
+QCheckBox {
+    color: yellow;
+}
+
+
+QRadioButton {
+    color: yellow;
+}
+
+
+QProgressBar {
+    color: yellow;
+}
+
+
+
+QPushButton {
+	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 lightgrey, stop: 1 #4f4f4f);
+	color: black;
+    border-radius: 10px;
+}
+
+
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 darkgray, stop: 1 lightgrey);
+}
+
+QPushButton#clear_pushButton {
+	background-color: darkred;
+    color: white
+}
+
