@@ -249,7 +249,7 @@ class ExifTools:
         log.debug("executeExiftool")
         
         fdnull = os.open(os.devnull, os.O_WRONLY)
-        log.info("executeExiftool: %s" % str(self.arglist))
+        log.debug("executeExiftool: %s" % str(self.arglist))
         proc = Popen(self.arglist, stdout=fdnull, stderr=fdnull)
         proc.wait()
         

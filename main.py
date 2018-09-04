@@ -288,7 +288,7 @@ class ImageWindow(QMainWindow):
         log.info("====== actionGPS ======")
 
         if sys.platform == 'win32':
-            log.info("Can not run web-modules on Windows yet!")
+            log.info("Can not run web-modules on Windows (yet)!")
             return
         
         self.iw=GPSWindow()
@@ -298,15 +298,25 @@ class ImageWindow(QMainWindow):
         if res == 1:
             lat, lng = self.iw.save()
             if len(lat) > 0:
-                exif.initArglist()
-                exif.appendLatLng(lat,lng)
+                #exif.initArglist()
+                #exif.appendLatLng(lat,lng)
                 
                 upd = False
+                completed = 0
+                self.ui.progressBar.setValue(0)
+                self.ui.progressBar.setMaximum(self.ui.treeWidget.topLevelItemCount())
+
                 for i in range(self.ui.treeWidget.topLevelItemCount()):
                     item = self.ui.treeWidget.topLevelItem(i)
                     if item.checkState(0) == 2:
+                        exif.initArglist()
+                        exif.appendLatLng(lat,lng)
+
                         exif.appendArglist(SourceDir + os.path.sep + item.text(2))
-                        upd = True
+                        exif.executeExiftool()
+                        completed += 1
+                        self.ui.progressBar.setValue(completed)
+                        upd = False
                         
                 if upd:
                     exif.executeExiftool()
@@ -386,7 +396,7 @@ class ImageWindow(QMainWindow):
         options = QFileDialog.Options()
         file_path, file_type = QFileDialog.getOpenFileNames(self, 
                                                             "Get images...", 
-                                                            settings.SourceDir , 
+                                                            SourceDir , 
                                                             "Images (*.arw *.jpg *.png *.tif)",
                                                             options=options)        
         if file_path:
